@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <!-- Font Awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet" />
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" rel="stylesheet" />
+    <!-- MDB -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/7.1.0/mdb.min.css" rel="stylesheet" />
+
+
+    <style>
+        .body {
+            animation: body_color 1s ease-in;
+            animation-fill-mode: forwards;
+        }
+
+        .btn_1 {
+            border: 10px solid white;
+            border-radius: 25px;
+            font-size: 25px;
+            font-weight: 900;
+            padding: 5px;
+            width: 200px;
+            background-color: black;
+            color: white;
+            animation: glow_text 1s 1.2s ease-in-out infinite alternate,
+                glow_border 1s 1.2s ease-in-out infinite alternate,
+                button_effect 1s ease-in;
+        }
+
+        .wishes {
+            display: none;
+            animation: card 1s 1s ease-in;
+            animation-fill-mode: forwards;
+        }
+
+        p {
+            display: none;
+        }
+
+
+        /* for expanding button */
+        @keyframes button_effect {
+            from {
+                border: 1px solid white;
+                border-radius: 0px;
+                font-size: 15px;
+                font-weight: 100;
+                padding: 5px;
+                width: 75px;
+                background-color: white;
+                color: black;
+            }
+
+            to {
+                border: 10px solid white;
+                border-radius: 25px;
+                font-size: 25px;
+                font-weight: 900;
+                padding: 5px;
+                width: 200px;
+                background-color: black;
+                color: white;
+            }
+        }
+
+        /* for glowing text*/
+        @keyframes glow_text {
+            from {
+                text-shadow: 0px 0px 25px red,
+
+                    5px -5px 30px red,
+                    5px 5px 30px red,
+                    -5px -5px 30px red,
+                    -5px 5px 30px red;
+            }
+
+            to {
+                text-shadow:
+                    10px -10px 35px red,
+                    10px 10px 35px red,
+                    -10px -10px 35px red,
+                    -10px 10px 35px red,
+
+                    15px -15px 40px red,
+                    15px 15px 40px red,
+                    -15px -15px 40px red,
+                    -15px 15px 40px red,
+
+                    20px -20px 45px red,
+                    20px 20px 45px red,
+                    -20px -20px 45px red,
+                    -20px 20px 45px red;
+            }
+        }
+
+        /* for glowing border */
+        @keyframes glow_border {
+            from {
+                box-shadow: 0px 0px 20px 1px red;
+            }
+
+            to {
+                box-shadow:
+                    -1px -1px 20px 1px red,
+                    1px 1px 20px 1px red,
+                    -1px -1px 20px 1px red,
+                    -1px 1px 20px 1px red;
+            }
+        }
+
+        /* for background of body */
+        @keyframes body_color {
+            from {
+                background-color: white;
+            }
+
+            to {
+                background-color: black;
+            }
+        }
+
+        /* for cards */
+        @keyframes card {
+            from {
+                background-color: white;
+ 
+            }
+
+            to {
+                background-color: black;
+    
+            }
+        }
+    </style>
+
+
+</head>
+
+<body class="" id="body">
+
+    <div class="container text-center my-5">
+        <button class="btn1" id="btn_1" onclick="display_wishes()">C L I C K</button>
+        <!-- <h1 class="my-3 h_n_y"><i>FOR SURPRISE</i></h1> -->
+    </div>
+
+    <div class="container">
+        <div class="card wishes" id="wishes">
+            <div class="card-body">
+                <p class="">
+                    A New Year is like a blank book, and the pen is in your hands. It is your chance to write a
+                    beautiful story for yourself.
+                </p>
+                <p class="">
+                    On the road to success, the rule is always to look ahead. May you reach your destination and may
+                    your journey be wonderful.
+                </p>
+                <p class="">
+                    Another year of success and happiness has passed. With every new year comes greater challenges and
+                    obstacles in life. I wish you courage, hope and faith to overcome all of the hurdles you may face.
+                    May you have a great year and a wonderful time ahead.
+                </p>
+                <p class="">
+                    Wishing you 12 months of success, 52 weeks of laughter, 365 days of fun, 8,760 hours of joy, 525,600
+                    minutes of good luck, and 31,536,000 seconds of happiness.🤣🤣
+                </p>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+
+    <script>
+
+        const display_wishes = () => {
+            let wishes = document.getElementById('wishes');
+            let btn_1 = document.getElementById('btn_1')
+            let background = document.getElementById('body')
+            let para = document.querySelectorAll('p')
+            if (wishes.style.display === 'block') {
+                wishes.style.display = 'none';
+                btn_1.classList.remove("btn_1")
+                background.classList.remove('body')
+                console.log(wishes.style.display)
+            }
+            else {
+                btn_1.classList.toggle("btn_1")
+                background.classList.toggle('body')
+                wishes.style.display = 'block'
+                console.log(wishes.style.display)
+            }
+        }
+
+
+    </script>
+
+
+    <!-- MDB -->
+    <script type="text/javascript"
+        src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/7.1.0/mdb.umd.min.js"></script>
+</body>
+
+</html>

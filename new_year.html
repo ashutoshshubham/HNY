@@ -41,7 +41,13 @@
         }
 
         p {
-            display: none;
+            /* display: none; */
+            opacity: 0;
+        }
+
+        .paragraph {
+            animation: wish_text 1s 2s ease-in;
+            animation-fill-mode: forwards;
         }
 
 
@@ -130,12 +136,24 @@
         @keyframes card {
             from {
                 background-color: white;
- 
+
             }
 
             to {
                 background-color: black;
-    
+
+            }
+        }
+
+        /* for paragraph of wishes */
+        @keyframes wish_text {
+            from {
+                /* display: block; */
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
             }
         }
     </style>
@@ -193,12 +211,22 @@
                 wishes.style.display = 'none';
                 btn_1.classList.remove("btn_1")
                 background.classList.remove('body')
+
+                for (i = 0; i < para.length; i++) {
+                    para[i].classList.remove('paragraph')
+                }
+
                 console.log(wishes.style.display)
             }
             else {
                 btn_1.classList.toggle("btn_1")
                 background.classList.toggle('body')
                 wishes.style.display = 'block'
+
+                for (i = 0; i < para.length; i++) {
+                    para[i].classList.toggle('paragraph')
+                }
+
                 console.log(wishes.style.display)
             }
         }

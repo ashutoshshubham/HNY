@@ -52,6 +52,68 @@
             animation-fill-mode: forwards;
         }
 
+        .hny {
+            color: blue;
+            font-weight: bolder;
+            -webkit-text-stroke: 1.5px blue;
+            animation: new_year 1.5s ease-in,
+                new_year_effect 1s 1.5s ease-in,
+                new_year_glow 1s 3s ease-in-out infinite alternate;
+            animation-fill-mode: forwards;
+        }
+
+        /* for happy new year font size*/
+        @keyframes new_year {
+            from {
+                font-size: 0px;
+            }
+
+            to {
+                font-size: 45px;
+            }
+        }
+
+        /* for happy new year text color */
+        @keyframes new_year_effect {
+            from {
+                /* color: blue; */
+
+            }
+
+            to {
+                color: white;
+
+            }
+        }
+
+        /* for happy new year text glow */
+        @keyframes new_year_glow {
+            from {
+                text-shadow: 0px 0px 0px blue;
+
+            }
+            to {
+                text-shadow:
+                    10px -10px 35px blue,
+                    10px 10px 35px blue,
+                    -10px -10px 35px blue,
+                    -10px 10px 35px blue,
+
+                    15px -15px 40px blue,
+                    15px 15px 40px blue,
+                    -15px -15px 40px blue,
+                    -15px 15px 40px blue,
+
+                    20px -20px 45px blue,
+                    20px 20px 45px blue,
+                    -20px -20px 45px blue,
+                    -20px 20px 45px blue;
+
+                    
+
+                    
+            }
+        }
 
         /* for expanding button */
         @keyframes button_effect {
@@ -172,7 +234,11 @@
     </div>
 
     <div>
-        <h1 class="text-center">VERY VERY HAPPY NEW YEAR</h1>
+        <h1 class="text-center hny">
+            <i>
+                VERY VERY HAPPY NEW YEAR
+            </i>
+        </h1>
     </div>
 
     <div class="container my-5">

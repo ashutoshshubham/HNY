@@ -53,13 +53,19 @@
         }
 
         .hny {
+            opacity: 1;
+            font-size: 0px;
             color: blue;
             font-weight: bolder;
             -webkit-text-stroke: 1.5px blue;
-            animation: new_year 1.5s ease-in,
-                new_year_effect 1s 1.5s ease-in,
-                new_year_glow 1s 3s ease-in-out infinite alternate;
+            animation: new_year 1.5s 3s ease-in,
+                new_year_effect 1s 4.5s ease-in,
+                new_year_glow 1s 5s ease-in-out infinite alternate;
             animation-fill-mode: forwards;
+        }
+
+        h1{
+            opacity: 0;;
         }
 
         /* for happy new year font size*/
@@ -234,10 +240,12 @@
     </div>
 
     <div>
-        <h1 class="text-center hny">
+        <h1 class="text-center" id="hny">
+            🥰🥰
             <i>
                 VERY VERY HAPPY NEW YEAR
             </i>
+            🥰🥰
         </h1>
     </div>
 
@@ -299,18 +307,28 @@
             let btn_1 = document.getElementById('btn_1')
             let background = document.getElementById('body')
             let para = document.querySelectorAll('p')
+            let hny = document.getElementById('hny')
             if (wishes.style.display === 'block') {
                 wishes.style.display = 'none';
                 btn_1.classList.remove("btn_1")
                 background.classList.remove('body')
 
+                btn_1.textContent = 'CLICK'
+
                 for (i = 0; i < para.length; i++) {
                     para[i].classList.remove('paragraph')
                 }
 
+                hny.classList.remove('hny')
+
                 console.log(wishes.style.display)
             }
             else {
+                setTimeout(() => {
+                    btn_1.textContent = 'CLICK AGAIN'
+                }, 7000)
+
+
                 btn_1.classList.toggle("btn_1")
                 background.classList.toggle('body')
                 wishes.style.display = 'block'
@@ -318,6 +336,8 @@
                 for (i = 0; i < para.length; i++) {
                     para[i].classList.toggle('paragraph')
                 }
+
+                hny.classList.toggle('hny')
 
                 console.log(wishes.style.display)
             }

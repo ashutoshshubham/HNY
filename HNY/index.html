@@ -1,0 +1,363 @@
+<!-- firebase login -->
+<!-- firebase init hosting -->
+<!-- firebase serve -->
+<!-- firebase deploy -->
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <!-- Font Awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet" />
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" rel="stylesheet" />
+    <!-- MDB -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/7.1.0/mdb.min.css" rel="stylesheet" />
+
+
+    <style>
+        .body {
+            animation: body_color 1s ease-in;
+            animation-fill-mode: forwards;
+        }
+
+        .btn_1 {
+            border: 10px solid white;
+            border-radius: 25px;
+            font-size: 25px;
+            font-weight: 900;
+            padding: 5px;
+            width: 200px;
+            background-color: black;
+            color: white;
+            animation: glow_text 1s 1.2s ease-in-out infinite alternate,
+                glow_border 1s 1.2s ease-in-out infinite alternate,
+                button_effect 1s ease-in;
+        }
+
+        .wishes {
+            display: none;
+            animation: card 1s 1s ease-in;
+            animation-fill-mode: forwards;
+        }
+
+        p {
+            opacity: 0;
+            font-size: 25px;
+            color: white;
+            font-weight: bolder;
+        }
+
+        .paragraph {
+            animation: wish_text 1s 2s ease-in;
+            animation-fill-mode: forwards;
+        }
+
+        .hny {
+            opacity: 1;
+            font-size: 0px;
+            color: blue;
+            font-weight: bolder;
+            -webkit-text-stroke: 1.5px blue;
+            animation: new_year 1.5s 3s ease-in,
+                new_year_effect 1s 4.5s ease-in,
+                new_year_glow 1s 5s ease-in-out infinite alternate;
+            animation-fill-mode: forwards;
+        }
+
+        h1{
+            opacity: 0;;
+        }
+
+        /* for happy new year font size*/
+        @keyframes new_year {
+            from {
+                font-size: 0px;
+            }
+
+            to {
+                font-size: 45px;
+            }
+        }
+
+        /* for happy new year text color */
+        @keyframes new_year_effect {
+            from {
+                /* color: blue; */
+
+            }
+
+            to {
+                color: white;
+
+            }
+        }
+
+        /* for happy new year text glow */
+        @keyframes new_year_glow {
+            from {
+                text-shadow: 0px 0px 0px blue;
+
+            }
+            to {
+                text-shadow:
+                    10px -10px 35px blue,
+                    10px 10px 35px blue,
+                    -10px -10px 35px blue,
+                    -10px 10px 35px blue,
+
+                    15px -15px 40px blue,
+                    15px 15px 40px blue,
+                    -15px -15px 40px blue,
+                    -15px 15px 40px blue,
+
+                    20px -20px 45px blue,
+                    20px 20px 45px blue,
+                    -20px -20px 45px blue,
+                    -20px 20px 45px blue;
+
+                    
+
+                    
+            }
+        }
+
+        /* for expanding button */
+        @keyframes button_effect {
+            from {
+                border: 1px solid white;
+                border-radius: 0px;
+                font-size: 15px;
+                font-weight: 100;
+                padding: 5px;
+                width: 75px;
+                background-color: white;
+                color: black;
+            }
+
+            to {
+                border: 10px solid white;
+                border-radius: 25px;
+                font-size: 25px;
+                font-weight: 900;
+                padding: 5px;
+                width: 200px;
+                background-color: black;
+                color: white;
+            }
+        }
+
+        /* for glowing text*/
+        @keyframes glow_text {
+            from {
+                text-shadow: 0px 0px 25px red,
+
+                    5px -5px 30px red,
+                    5px 5px 30px red,
+                    -5px -5px 30px red,
+                    -5px 5px 30px red;
+            }
+
+            to {
+                text-shadow:
+                    10px -10px 35px red,
+                    10px 10px 35px red,
+                    -10px -10px 35px red,
+                    -10px 10px 35px red,
+
+                    15px -15px 40px red,
+                    15px 15px 40px red,
+                    -15px -15px 40px red,
+                    -15px 15px 40px red,
+
+                    20px -20px 45px red,
+                    20px 20px 45px red,
+                    -20px -20px 45px red,
+                    -20px 20px 45px red;
+            }
+        }
+
+        /* for glowing border */
+        @keyframes glow_border {
+            from {
+                box-shadow: 0px 0px 20px 1px red;
+            }
+
+            to {
+                box-shadow:
+                    -1px -1px 20px 1px red,
+                    1px 1px 20px 1px red,
+                    -1px -1px 20px 1px red,
+                    -1px 1px 20px 1px red;
+            }
+        }
+
+        /* for background of body */
+        @keyframes body_color {
+            from {
+                background-color: white;
+            }
+
+            to {
+                background-color: black;
+            }
+        }
+
+        /* for cards */
+        @keyframes card {
+            from {
+                background-color: white;
+                border: 10px solid transparent;
+
+            }
+
+            to {
+                background-color: black;
+                border: 10px solid green;
+
+            }
+        }
+
+        /* for paragraph of wishes */
+        @keyframes wish_text {
+            from {
+                /* display: block; */
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+            }
+        }
+    </style>
+
+
+</head>
+
+<body class="" id="body">
+
+    <div class="container text-center my-5">
+        <button class="btn1" id="btn_1" onclick="display_wishes()">C L I C K</button>
+    </div>
+
+    <div>
+        <h1 class="text-center" id="hny">
+            🥰🥰
+            <i>
+                VERY VERY HAPPY NEW YEAR
+            </i>
+            🥰🥰
+        </h1>
+    </div>
+
+    <div class="container my-5">
+        <div class="card wishes" id="wishes">
+            <div class="card-body">
+                <p class="">
+                    <i>
+                        A New Year is like a blank book, and the pen is in your hands. It is your chance to write a
+                        beautiful story for yourself.
+                    </i>
+                </p>
+                <p class="">
+                    <i>
+                        On the road to success, the rule is always to look ahead. May you reach your destination and may
+                        your journey be wonderful.
+                    </i>
+                </p>
+                <p class="">
+                    <i>
+                        Another year of success and happiness has passed. With every new year comes greater challenges
+                        and
+                        obstacles in life. I wish you courage, hope and faith to overcome all of the hurdles you may
+                        face.
+                        May you have a great year and a wonderful time ahead.
+                    </i>
+                </p>
+                <p class="">
+                    <i>
+                        Wishing you 12 months of success, 52 weeks of laughter, 365 days of fun, 8,760 hours of joy,
+                        525,600
+                        minutes of good luck, and 31,536,000 seconds of happiness.
+                    </i>
+                    🤣🤣🤣🤣
+                </p>
+                <p class="text-center">
+                    💝💝
+                    <i>
+                        STAY HAPPY AND STAY SAFE.
+                    </i>
+                    💝💝
+                </p>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+
+    <script>
+
+        const display_wishes = () => {
+            let wishes = document.getElementById('wishes');
+            let btn_1 = document.getElementById('btn_1')
+            let background = document.getElementById('body')
+            let para = document.querySelectorAll('p')
+            let hny = document.getElementById('hny')
+            if (wishes.style.display === 'block') {
+                wishes.style.display = 'none';
+                btn_1.classList.remove("btn_1")
+                background.classList.remove('body')
+
+                btn_1.textContent = 'CLICK'
+
+                for (i = 0; i < para.length; i++) {
+                    para[i].classList.remove('paragraph')
+                }
+
+                hny.classList.remove('hny')
+
+                console.log(wishes.style.display)
+            }
+            else {
+                setTimeout(() => {
+                    btn_1.textContent = 'REMOVE'
+                }, 7000)
+
+
+                btn_1.classList.toggle("btn_1")
+                background.classList.toggle('body')
+                wishes.style.display = 'block'
+
+                for (i = 0; i < para.length; i++) {
+                    para[i].classList.toggle('paragraph')
+                }
+
+                hny.classList.toggle('hny')
+
+                console.log(wishes.style.display)
+            }
+        }
+
+
+    </script>
+
+
+    <!-- MDB -->
+    <script type="text/javascript"
+        src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/7.1.0/mdb.umd.min.js"></script>
+</body>
+
+</html>
